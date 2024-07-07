@@ -3,9 +3,9 @@ const app  = express()
 const cors = require('cors')
 const env = require('dotenv')
 const ConnectDB = require('./models/ConnectDB')
-
+const bodyParser = require('body-parser')
 env.config()
-
+app.use(bodyParser.json({ limit: '50mb' }));
 app.use(cors({
     origin:'*'
 }
